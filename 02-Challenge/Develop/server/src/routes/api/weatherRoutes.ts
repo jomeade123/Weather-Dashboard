@@ -1,4 +1,5 @@
-import { Router, type Request, type Response } from 'express';
+import { Router, Request, Response } from 'express';
+import type { RequestHandler } from 'express';
 import HistoryService from '../../service/historyService.js';
 import weatherService from '../../service/weatherService.js';
 const router = Router();
@@ -14,8 +15,11 @@ router.post('/', async (req: Request, res: Response) => {
     const weatherData = await weatherService.getWeatherForCity(cityName);
     await HistoryService.addCity(cityName);
     return res.json(weatherData);
-  } catch (error) {
+  } catch (error: any) {
     console.error('Weather route error:', error);
+    if (error.message === 'City not found') {
+      return res.status(404).json({ error: 'City not found' });
+    }
     return res.status(500).json({ error: 'Failed to fetch weather data' });
   }
 });
