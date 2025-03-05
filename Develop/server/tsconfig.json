@@ -1,0 +1,20 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    /* Modules */
+    "rootDir": "src" /* Specify the root folder within your source files. */,
+    "moduleDetection": "force",
+
+    /* Emit */
+    "outDir": "dist", /* Specify an output folder for all emitted files. */
+    // "noEmitOnError": true /* Disable emitting files if any type checking errors are reported. */
+
+    /* Module Settings */
+    "module": "Node16",
+    "moduleResolution": "Node16",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+  },
+  "include": ["src"]
+}
