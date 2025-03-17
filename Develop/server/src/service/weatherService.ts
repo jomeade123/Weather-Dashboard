@@ -53,6 +53,7 @@ class WeatherService {
   // Fetch location data
   private async fetchLocationData(query: string): Promise<any> {
     try {
+      console.log(query);
       const response = await fetch(query);
       if (!response.ok) {
         return { error: `Failed to fetch location data: ${response.statusText}` };
@@ -79,6 +80,7 @@ class WeatherService {
   // Build geocode query
   private buildGeocodeQuery(): string {
     if (!this.cityName || !this.apiKey) {
+      console.log(this.cityName, this.apiKey);
       console.error("City name or API key is missing");
       return "";
     }

@@ -8,8 +8,9 @@ dotenv.config();
 import routes from './routes/index.js';
 
 const app = express();
-const PORT = Number(process.env.PORT) || 3002;
-
+const PORT = Number(process.env.PORT) || 3001;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 // Serve static files from client dist folder
 app.use(express.static(join(__dirname, '../../../client/dist')));
 
