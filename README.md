@@ -105,3 +105,4 @@ This project is licensed under the MIT License.
 - [OpenWeatherMap API](https://openweathermap.org/api)
 - [Bootstrap](https://getbootstrap.com/)
 - [FontAwesome](https://fontawesome.com/)
+![alt text](image.png)
