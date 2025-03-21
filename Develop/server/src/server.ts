@@ -12,7 +12,7 @@ const PORT = Number(process.env.PORT) || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 // Serve static files from client dist folder
-app.use(express.static(join(__dirname, '../../../client/dist')));
+app.use(express.static(join(__dirname, '../../../Develop/client/dist')));
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
